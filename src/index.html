@@ -1,11 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
 </head>
 <body>
-  
+    <div id="root">
+        <div class="search-flights" >
+            <h2 class="search-flights__title">SEARCH FLIGHT</h2>
+            <form class="searchFlightsForm">
+                <input type="text" placeholder="Airline, destination or fligth #">
+                <button type="submit">SEARCH</button>
+            </form>
+            <div class="search-results">
+                <div class="nav-container">
+                    <ul class="nav nav-tabs">
+                        <div class="container">
+                            <li class="nav-item active">
+                                DEPARTURES  
+                            </li>
+                            <li class="nav-item">
+                                ARRIVALS
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+                <div class="tabs-container">
+                    <table class="table">
+                        <thead>
+                            <tr class="information-container">
+                                <th class="information-container terminal">Terminal</th>
+                                <th class="information-container local-time">Local time</th>
+                                <th class="information-container destination">Destination</th>
+                                <th class="information-container status">Status</th>
+                                <th class="information-container airline">Airline</th>
+                                <th class="information-container flight">Flight</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="information-container">
+                                <td class="information-container terminal"></td>
+                                <td class="information-container local-time"></td>
+                                <td class="information-container destination"></td>
+                                <td class="information-container status"></td>
+                                <td class="information-container airline"></td>
+                                <td class="information-container flight"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
 </body>
 </html>
