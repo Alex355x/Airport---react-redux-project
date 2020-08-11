@@ -1,7 +1,7 @@
 import { FLIGHTS_LIST_RECIEVED } from './flights.actions';
 
 const initialState = {
-    flightsList: {},
+    flightsList: {body: []},
 };
 
 

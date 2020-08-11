@@ -1,7 +1,7 @@
 // import { createSelector } from 'reselect';
 
 export const flightsListSelector = state => 
-  state.flights.flightsList;
+  state.flights.flightsList.body;
 
 // export const sortedTasksListSelector = createSelector(
 //   [flightsListSelector],

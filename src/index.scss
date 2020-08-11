@@ -108,6 +108,9 @@ body {
   line-height: 60px;
   min-width: 500px;
 
+  &__active {
+    background: #fff;
+  }
 }
 
 .nav-tabs {
@@ -126,6 +129,10 @@ body {
 }
 .information-container_head {
   height: 48px;
+}
+
+.company-name__logo {
+  height: 26px;
 }
 
 
