@@ -3,21 +3,27 @@ import TableHead from "./TableHead";
 import moment from "moment";
 
 const FlightsList = ({flights}) => {
-  console.log(flights)
+//   console.log(flights)
     const fligtsListDirectionMapped = flights.map(el => {
+        
         let status = el.status === "DP"
                     ? "Departed"
                     : "Landed";
         
-        let timeShedule = status === 'DP' 
+        let timeShedule = el.status === "DP"
             ? moment(el.timeDepShedule).format("h:mm")
             : moment(el.timeArrShedule).format("h:mm");
         
-        
+        let terminal = el.term === 'A' 
+        ? <span className='term term__A'>A</span> 
+        : el.term === 'D' 
+        ? <span className='term term__D'>D</span>
+        : <span className='term term__C'>C</span>
+
         return (
         <tr className="information-container_body" key={el.ID}>
             <td className="information-container">
-                {el.term} 
+                {terminal} 
             </td>
             <td className="information-container">
                 {timeShedule}
@@ -34,13 +40,23 @@ const FlightsList = ({flights}) => {
                     src={`https://api.iev.aero${el.codeShareData[0].logo}`}
                     alt="company-logo"
                 />
-                {el.airline.en.name}          
+                <span className='airlineName'>
+                {el.airline.en.name}   
+                </span>
+                        
             </td>
             <td className="information-container">
                 {el.codeShareData[0].codeShare}
             </td>
         </tr>)
     })
+
+    if (fligtsListDirectionMapped.length === 0) {
+        return (    
+            <div className='noFlights'>NO FLIGHTS</div>
+        )
+    }
+
     return (
         <div className="tabs-container">
             <table className="table">

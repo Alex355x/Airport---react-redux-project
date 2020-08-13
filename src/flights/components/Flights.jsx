@@ -19,7 +19,7 @@ const Flights = ({ getFlightsList, flightsList }) => {
         flightsList[direction === 'arrivals' ? 'arrival' : 'departure'] || [];
 
     const filterText = qs.parse(search, { ignoreQueryPrefix: true }).search;
-     
+    //  console.log(filterText)
 
     const filteredFlights = filterText
         ? flightsListDirection.filter(flight => flight.codeShareData[0].codeShare

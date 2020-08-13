@@ -16,38 +16,46 @@ body {
 }
 
 .search-flights {
-    display: block;
-    min-height: 100%;
-    font-family: Open Sans, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    // font-family: Open Sans, sans-serif;
     position: relative;
     font-size: 1rem;
     // font-weight: 400;
-    line-height: 1.5;
+    // line-height: 1.5;
     
     &__title {
-        text-align: left;
+        text-align: center;
+        // margin-right: 200px;
         // position: relative;
+        // left: -20px;
         // z-index: 1;
-        font-weight: 400;
-        font-size: 125px;
-        line-height: 40px;
-        margin: 30 0 30 0;
-        padding: 0;
-        border: 0;
+        // font-weight: 1rem;
+        font-size: 5rem;
+        font-weight: 200;
+        line-height: 20%;
+        // margin: 30 0 30 0;
+        // padding: 0;
+        // border: 0;
         vertical-align: baseline;
         color: #000;
         background-color: transparent;
     }
 
     &__form {
-      margin: 0;
-      padding: 0;
+      width: 45%;
+      margin: 10px auto;
+      // padding: 0;
       border: 0;
       font-size: 100%;
       font: inherit;
-      vertical-align: baseline;
+      // vertical-align: baseline;
       display: inline-flex;
+      position: relative;
     }
+
     &__input {
       height: 70px;
       font-size: 24px;
@@ -57,6 +65,7 @@ body {
       display: block;
       border: none;
       width: 100%;
+      outline: none;
     }
 
     &__btn {
@@ -66,20 +75,26 @@ body {
       background: #1eb7ee;
       color: #fff;
       cursor: pointer;
-      border-radius: 0 80px 0 0;
+      border-radius: 0 60px 0 0;
       text-align: left;
       border: none;
+      outline: none;
+      &:hover {
+        box-shadow: 0 5px 10px rgba(37, 40, 41, 0.3);
+        border-radius: 0 35px 0 0;
+      }
     }
 }
 
 .fa-search {
   position: absolute;
   font-size: 40px;
-  width: 100px;
-  height: 100px;
-  color: black;
+  width: 80px;
+  height: 80px;
+  color: grey;
   line-height: 80px;
   left: 16px;
+  top: -6px;
 }
 
 .container {
@@ -87,10 +102,18 @@ body {
 }
 
 .nav-container {
-  margin-top: 70px;
+  // margin-top: 50px;
+  margin: 50px auto;
   background:#73d2f0;
   border-radius: 60px 60px 0 0;
+  width: 90%;
+  max-width: 1200px;
+  // &:hover {
+  //   // opacity: 90%;
+  //   color: rgb(134, 210, 234);
+  // }
 }
+
 
 .nav-item {
     display: inline-flex;
@@ -104,50 +127,133 @@ body {
     font-weight: 600;
     border-radius: 60px 60px 0 0;
     outline: none;
-    background:#73d2f0;
+    background:hsl(194, 70%, 72%);
     color: #fff;
     overflow: hidden;
     outline: none;
     padding: 0;
     border: 0;
     font-size: 24px;
-    line-height: 60px;
-    min-width: 500px;
+    line-height: 5rem;
+    width: 50%;
+    height: 5rem;
     cursor: pointer;
-
+   
+    
     &__active {
       background: #fff;
-      color: #73d2f0
+      color:#8dd7ee;
     }
 }
-
-
 
 .nav-tabs {
   padding: 0px;
 }
+
 .table {
-  display: flex;
-  flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
   border-collapse: collapse;
+  width: 100%;
+  
+  background: #fff;
 }
+
+
 .information-container {
+  
   text-align: center;
-  width: 166px;
-  background-color: white;
-  height: 91px;
+  
+  // width: 166px;
+  // background-color: white;
+  line-height: 5rem;
+  
 }
-.information-container_head {
-  height: 48px;
+
+.tbody {
+  background-color: grey;
 }
+
+// .information-container_head {
+//   height: 48px;
+// }
 
 .company-name__logo {
   height: 26px;
 }
 
+.plane {
+  margin-right: 10px;
+}
+
+.term {
+  font-size: 22px;
+  line-height: 21px;
+  padding: 11px;
+  display: inline-flex;
+  font-weight: 700;
+  border-radius: 50%;
+  width: 40px;
+
+  &__A {
+    color: green;
+    border: 1px solid green;
+  }
+
+  &__D {
+    color: hsl(194, 79%, 64%);
+    border: 1px solid hsl(194, 79%, 64%);
+  }
+
+  &__C {
+    color: hsl(44, 81%, 61%);
+    border: 1px solid hsl(44, 81%, 61%);;
+  }
+
+}
+
+.noFlights {
+  width: 100%;
+  height: 200px;
+  font-size: 50px;
+  line-height: 200px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.information-container_body {
+  line-height: 5rem;
+  text-align: center;
+  &:hover {
+    box-shadow: 0 5px 10px rgba(37, 40, 41, 0.3);
+  }
+  &:nth-child(odd) {
+    background-color: rgba(0,102,135,.1)
+  }
+}
+
+// .information-container_body :nth-child(odd) {
+  
+//   background-color: grey;
+
+// }
+// .information-container_body :nth-of-type(odd) {
+//   background-color: grey;
+// }
+
+// .airlineName {
+//   display: inline;
+//   text-align: center;
+//   line-height: 20px;
+// }
 
 
 
+
+
+// &:hover {
+//   -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.75);
+// }
 // .wrapper-container {
 //   margin: 0;
 //   padding: 0;
