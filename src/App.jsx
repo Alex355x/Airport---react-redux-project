@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './store';
 import SearchForm from './flights/components/SearchForm';
@@ -13,10 +13,12 @@ const App = () => {
         <Router>
             <SearchForm />
               <Switch>
+                <Route exact path="/">
+                        <Redirect to="/arrivals"/> : <Flights />
+                    </Route>
                 <Route path='/'>
-                  <Navigation />
-                </Route>
-               
+                    <Navigation />
+                </Route> 
             </Switch>
         </Router>
       </Provider>

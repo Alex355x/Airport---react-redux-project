@@ -4,14 +4,14 @@ import Flights from './Flights';
 import ReactDOM from 'react-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlaneDeparture, faPlaneArrival } from "@fortawesome/free-solid-svg-icons";
-import { useHistory, useParams, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import  qs from 'qs';
 
 const Navigation = () => {
 
     const  { search }  = useLocation();
     const value = qs.parse(search, { ignoreQueryPrefix: true }).search;
-     console.log(value)
+    console.log(value + ' navigation 14')
 
     return (
         <div className="nav-container">
@@ -28,7 +28,7 @@ const Navigation = () => {
                 </NavLink>
                 
                 <NavLink 
-                // to='/arrivals'
+                
                 to={`/arrivals${value ? `?search=${value}` : ''}`}
                 className='nav-item' 
                 activeClassName='nav-item__active'
@@ -43,11 +43,7 @@ const Navigation = () => {
                 <Switch>
                     <Route path="/:direction">
                         <Flights />
-                    </Route>
-                    {/* <Route to="/search?q=react"> departures${value ? `?search=${value}` : ''}`}
-                        <Flights />
-                    </Route> */}
-                    
+                    </Route>                    
                 </Switch>
             </BrowserRouter>
         </div>  

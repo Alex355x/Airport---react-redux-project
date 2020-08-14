@@ -1,17 +1,18 @@
 import React, { useEffect } from "react";
 import { connect } from 'react-redux';
 import  qs from 'qs';
-import { NavLink, useParams, useLocation } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 import FlightsList from './FlightsList';
-import { flightsListSelector } from '../flights.selectors';
+import { flightsListSelector, isFetchingSelector } from '../flights.selectors';
 import * as flightsActions from  '../flights.actions';
 
 
-const Flights = ({ getFlightsList, flightsList }) => {
+const Flights = ({ getFlightsList, flightsList, isFetching }) => {
 
       useEffect(()=> {
         getFlightsList();
       }, []);
+
     const { direction } = useParams();
     const  { search }  = useLocation();
     
@@ -26,20 +27,28 @@ const Flights = ({ getFlightsList, flightsList }) => {
         .toLowerCase()
         .includes(filterText.toLowerCase()))
         : flightsListDirection;
-          console.log(filteredFlights);
+          // console.log(filteredFlights);
+    
+              
       
         return (
             <main className="flights">
-                <FlightsList  flights={filteredFlights}/>
+                <FlightsList
+                flights={filteredFlights} 
+                isFetching={isFetching}
+
+                />
             </main>
         );
 }
 const mapState = state => {
     return {
       flightsList: flightsListSelector(state),
+      isFetching: isFetchingSelector(state),
     };
 };
 const mapDispatch = {
-    getFlightsList: flightsActions.getFlightsList
+    getFlightsList: flightsActions.getFlightsList,
+
 }
 export default connect(mapState, mapDispatch)(Flights);
