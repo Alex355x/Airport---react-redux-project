@@ -210,11 +210,7 @@ body {
   &:nth-child(odd) {
     background-color: #e7efec;
     border-right: 1px solid #e7efec;
-    &:hover {
-      box-shadow: 0 5px 10px rgba(37, 40, 41, 0.3);
-    }
-  }
-  
+  } 
 }
 
 .logo {

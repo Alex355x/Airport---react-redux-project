@@ -11,14 +11,9 @@ const App = () => {
     <div className='search-flights'>
       <Provider store={store}>
         <Router>
-            <Switch>
-                <Route exact path="/">
-                        <Redirect to="/arrivals"/> : <Flights />
-                    </Route>
-                <Route path='/'>
-                    <Navigation />
-                </Route> 
-            </Switch>
+            <Route path="/">
+                <Navigation />
+            </Route>
         </Router>
       </Provider>
     </div>  
