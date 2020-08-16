@@ -20,25 +20,14 @@ body {
     flex-direction: column;
     height: 100%;
     width: 100%;
-    // font-family: Open Sans, sans-serif;
     position: relative;
     font-size: 1rem;
-    // font-weight: 400;
-    // line-height: 1.5;
-    
+        
     &__title {
         text-align: center;
-        // margin-right: 200px;
-        // position: relative;
-        // left: -20px;
-        // z-index: 1;
-        // font-weight: 1rem;
         font-size: 5rem;
         font-weight: 200;
         line-height: 20%;
-        // margin: 30 0 30 0;
-        // padding: 0;
-        // border: 0;
         vertical-align: baseline;
         color: #000;
         background-color: transparent;
@@ -47,11 +36,9 @@ body {
     &__form {
       width: 45%;
       margin: 10px auto;
-      // padding: 0;
       border: 0;
       font-size: 100%;
       font: inherit;
-      // vertical-align: baseline;
       display: inline-flex;
       position: relative;
     }
@@ -102,18 +89,12 @@ body {
 }
 
 .nav-container {
-  // margin-top: 50px;
   margin: 50px auto;
-  background:#73d2f0;
+  background: hsl(194, 70%, 72%);;
   border-radius: 60px 60px 0 0;
   width: 90%;
   max-width: 1200px;
-  // &:hover {
-  //   // opacity: 90%;
-  //   color: rgb(134, 210, 234);
-  // }
 }
-
 
 .nav-item {
     display: inline-flex;
@@ -138,12 +119,12 @@ body {
     width: 50%;
     height: 5rem;
     cursor: pointer;
-   
-    
+       
     &__active {
       background: #fff;
       color:#8dd7ee;
     }
+    
 }
 
 .nav-tabs {
@@ -151,32 +132,20 @@ body {
 }
 
 .table {
-  // display: flex;
-  // flex-direction: column;
   border-collapse: collapse;
   width: 100%;
-  
   background: #fff;
 }
 
 
 .information-container {
-  
   text-align: center;
-  
-  // width: 166px;
-  // background-color: white;
   line-height: 5rem;
-  
 }
 
 .tbody {
   background-color: grey;
 }
-
-// .information-container_head {
-//   height: 48px;
-// }
 
 .company-name__logo {
   height: 26px;
@@ -259,157 +228,3 @@ body {
   }
 }
 
-
-// .spinner {
-//   display: inline-block;
-//   border: 3px solid #ccc;
-//   border-left-color: transparent;
-//   animation: spin .5s infinite linear;
-//   border-radius: 50%;
-// }
-
-
-
-
-
-
-
-
-
-// .information-container_body :nth-child(odd) {
-  
-//   background-color: grey;
-
-// }
-// .information-container_body :nth-of-type(odd) {
-//   background-color: grey;
-// }
-
-// .airlineName {
-//   display: inline;
-//   text-align: center;
-//   line-height: 20px;
-// }
-
-
-
-
-
-// &:hover {
-//   -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.75);
-// }
-// .wrapper-container {
-//   margin: 0;
-//   padding: 0;
-//   border: 0;
-//   font-size: 100%;
-//   font: inherit;
-//   vertical-align: baseline;
-// }
-
-// .title {
-//   font-size: 70px;
-//   font-weight: 300;
-//   margin-top: 0;
-//   margin: 0;
-//   padding: 0;
-//   border: 0;
-//   font-size: 100%;
-//   font: inherit;
-//   vertical-align: baseline;
-// }
-
-// .title {
-//   font-size: 24px;
-//   text-transform: uppercase;
-//   text-align: center;
-// }
-
-// .todo-list {
-//   display: flex;
-//   flex-direction: column;
-//   margin-top: 32px;
-//   background-color: coral;
-//   border-radius: 8px;
-//   padding: 8px;
-//   max-width: 600px;
-//   margin: auto;
-// }
-
-// .list {
-//   margin: 0;
-//   padding: 0;
-//   list-style-type: none;
-//   margin: auto;
-//   width: 100%;
-// }
-
-// .list-item {
-//   display: flex;
-//   align-items: center;
-//   height: 40px;
-//   border-radius: 8px;
-//   background-color: wheat;
-//   margin-bottom: 8px;
-//   padding: 8px;
-
-//   &:last-child {
-//       margin-bottom: 0;
-//   }
-
-//   &_done {
-//       opacity: 0.7;
-
-//       .list-item__text {
-//           text-decoration: line-through;
-//       }
-//   }
-
-//   &__checkbox {
-//       margin-right: 8px;
-//   }
-
-//   &__delete-btn {
-//       width: 24px;
-//       height: 24px;
-//       border-radius: 50%;
-//       outline: none;
-//       cursor: pointer;
-//       background: transparent;
-//       border: none;
-//       margin-left: auto;
-//       text-decoration: none;
-//       padding: 0;
-//       transform: rotate(45deg);
-//       font-size: 18px;
-//       line-height: 24px;
-//       text-align: center;
-//       opacity: 0.7;
-
-//       &::before {
-//           content: "+";
-//       }
-//   }
-// }
-
-// .btn {
-//   height: 32px;
-//   min-width: 64px;
-//   border: 3px solid #ccc;
-//   outline: none;
-//   cursor: pointer;
-//   border-radius: 8px;
-//   margin-left: 16px;
-// }
-
-// .create-task {
-//   display: flex;
-//   margin-bottom: 8px;
-
-//   &__input {
-//       height: 32px;
-//       border: 3px solid #ccc;
-//       border-radius: 8px;
-//       flex: 1;
-//   }
-// }

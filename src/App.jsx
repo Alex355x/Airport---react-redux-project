@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './store';
-import SearchForm from './flights/components/SearchForm';
 import Navigation from './flights/components/Navigation';
 import Flights from './flights/components/Flights';
 
@@ -12,8 +11,7 @@ const App = () => {
     <div className='search-flights'>
       <Provider store={store}>
         <Router>
-            <SearchForm />
-              <Switch>
+            <Switch>
                 <Route exact path="/">
                         <Redirect to="/arrivals"/> : <Flights />
                     </Route>

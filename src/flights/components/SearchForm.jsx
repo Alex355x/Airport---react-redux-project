@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import { useLocation } from 'react-router-dom';
 import  qs from 'qs';
 
-const SearchForm = () => {
-    const  { search }  = useLocation();
+const SearchForm = ({filterText}) => {
+    
     const [value, setValue] = useState(filterText);
-    const filterText = qs.parse(search, { ignoreQueryPrefix: true }).search;
-   
+    
     return (
         <>
             <h2 className="search-flights__title">SEARCH FLIGHT</h2>
@@ -29,7 +28,6 @@ const SearchForm = () => {
         </>
     )
 }
-
 
 export default SearchForm;
 

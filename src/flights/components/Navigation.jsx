@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlaneDeparture, faPlaneArrival } from "@fortawesome/free-solid-svg-icons";
 import { useLocation } from "react-router-dom";
 import  qs from 'qs';
-
+import SearchForm from './SearchForm';
 
 const Navigation = () => {
     
@@ -13,6 +13,8 @@ const Navigation = () => {
     const value = qs.parse(search, { ignoreQueryPrefix: true }).search;
    
     return (
+        <>
+        <SearchForm filterText={value}/>
         <div className="nav-container">
             <BrowserRouter>
                 <NavLink 
@@ -43,10 +45,10 @@ const Navigation = () => {
                     </Route>                    
                 </Switch>
             </BrowserRouter>
-        </div>  
+        </div> 
+        </> 
     )
 }
-
 
 
 export default Navigation;
