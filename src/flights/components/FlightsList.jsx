@@ -2,8 +2,8 @@ import React from 'react';
 import TableHead from "./TableHead";
 import moment from "moment";
 
-const FlightsList = ({flights, isFetching}) => {
-//   console.log(flights)
+const FlightsList = ({flights, isFetching }) => {
+
     const fligtsListDirectionMapped = flights.map(el => {
         
         let status = el.status === "DP"

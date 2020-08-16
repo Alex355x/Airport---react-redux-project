@@ -1,10 +1,9 @@
 import { FLIGHTS_LIST_RECIEVED, SHOW_SPINNER } from './flights.actions';
 
 const initialState = {
-    flightsList: {body: []},
+    flightsList: {body: {}},
     isFetching: false,
 };
-
 
 const flightsReducer = (state = initialState, action) => {
     switch (action.type) {

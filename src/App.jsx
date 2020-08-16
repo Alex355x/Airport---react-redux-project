@@ -7,6 +7,7 @@ import Navigation from './flights/components/Navigation';
 import Flights from './flights/components/Flights';
 
 const App = () => {
+    
   return (
     <div className='search-flights'>
       <Provider store={store}>
