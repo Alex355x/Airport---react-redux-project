@@ -34,7 +34,7 @@ body {
     }
 
     &__form {
-      width: 45%;
+      width: 35%;
       margin: 10px auto;
       border: 0;
       font-size: 100%;
@@ -67,9 +67,11 @@ body {
       border: none;
       outline: none;
       &:hover {
+        transition: 0.3s;
         box-shadow: 0 5px 10px rgba(37, 40, 41, 0.3);
         border-radius: 0 35px 0 0;
       }
+      
     }
 }
 
@@ -92,8 +94,12 @@ body {
   margin: 50px auto;
   background: hsl(194, 70%, 72%);;
   border-radius: 60px 60px 0 0;
-  width: 90%;
-  max-width: 1200px;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.flights {
+  background-color: white;
 }
 
 .nav-item {
@@ -115,9 +121,9 @@ body {
     padding: 0;
     border: 0;
     font-size: 24px;
-    line-height: 5rem;
+    line-height: 4rem;
     width: 50%;
-    height: 5rem;
+    height: 4rem;
     cursor: pointer;
        
     &__active {
@@ -134,13 +140,17 @@ body {
 .table {
   border-collapse: collapse;
   width: 100%;
-  background: #fff;
+  background: transparent;
 }
 
 
+.information-container_head {
+  color: grey;
+}
+
 .information-container {
-  text-align: center;
   line-height: 5rem;
+  
 }
 
 .tbody {
@@ -198,7 +208,8 @@ body {
     box-shadow: 0 5px 10px rgba(37, 40, 41, 0.3);
   }
   &:nth-child(odd) {
-    background-color: rgba(0,102,135,.1)
+    background-color: #e7efec;
+    border-right: 1px solid #e7efec;
   }
 }
 
