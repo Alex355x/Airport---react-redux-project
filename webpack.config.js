@@ -8,7 +8,7 @@ module.exports = (env, argv) => {
     const config = {
         entry: "./src/index.jsx",
         output: {
-            path: __dirname + '/review_build',
+            path: __dirname + '/build',
             filename: "bundle.js",
             publicPath: '/',
         
@@ -37,6 +37,9 @@ module.exports = (env, argv) => {
             new HtmlWebpackPlugin({
                 template: "./src/index.html"
             }),
+            new CopyPlugin({
+                patterns: [{ from: "_redirects", to: "" }],
+              }),
         ],
         resolve: {
             extensions: [".js", ".jsx"]
