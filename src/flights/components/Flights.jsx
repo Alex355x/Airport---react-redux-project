@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom';
 import FlightsList from './FlightsList';
 import { flightsListSelector, isFetchingSelector } from '../flights.selectors';
 import * as flightsActions from  '../flights.actions';
+import moment from "moment";
 
 
 const Flights = ({ getFlightsList, flightsList, isFetching, filterText }) => {

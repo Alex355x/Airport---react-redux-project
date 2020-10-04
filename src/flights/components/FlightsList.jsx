@@ -3,12 +3,12 @@ import TableHead from "./TableHead";
 import moment from "moment";
 
 const FlightsList = ({flights, isFetching }) => {
-
+    
     const fligtsListDirectionMapped = flights.map(el => {
         
-        let status = el.status === "DP"
-                    ? "Departed"
-                    : "Landed";
+        let status = el.status === "DP" ? 
+                    "Departed" : el.status === "LN" ? "Landed"
+                    : "";
         
         let timeShedule = el.status === "DP"
             ? moment(el.timeDepShedule).format("h:mm")
@@ -32,7 +32,7 @@ const FlightsList = ({flights, isFetching }) => {
                 {el["airportToID.city_en"] || el["airportFromID.city_en"]}
             </td>
             <td className="information-container">
-                {`${status} ${moment(el.timeLandFact).format("h:mm")}`}
+                {status !== "" ? `${status} ${moment(el.timeLandFact).format("h:mm")}` : ""}
             </td>
             <td className="information-container logo">
                 <img
