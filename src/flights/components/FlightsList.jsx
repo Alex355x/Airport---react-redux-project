@@ -3,17 +3,29 @@ import TableHead from "./TableHead";
 import moment from "moment";
 
 const FlightsList = ({flights, isFetching }) => {
-    
-    const fligtsListDirectionMapped = flights.map(el => {
+    console.log(flights)
+    const currentDate = moment().format("YYYY-MM-DD");
+    const flightsToday = flights.filter(date => date.actual?.split('T')[0] === currentDate);
+    console.log(flightsToday);
+
+    const fligtsListDirectionMapped = flightsToday.map(el => {
         
-        let status = el.status === "DP" ? 
-                    "Departed" : el.status === "LN" ? "Landed"
-                    : "";
-        
+        let status = el.status === "DP" 
+            ? "Departed" : el.status === "LN" 
+            ? "Landed" : el.status === "ON" 
+            ? "On time" : el.status === "BD" 
+            ? "Boarding" : el.status === "CK" 
+            ? "Registration" : 'In flight';
+
+            
+        console.log(el.status)
         let timeShedule = el.status === "DP"
-            ? moment(el.timeDepShedule).format("h:mm")
-            : moment(el.timeArrShedule).format("h:mm");
+            ? moment(el.timeDepShedule).format("h:mm") : el.status === "LN" 
+            ? moment(el.timeArrShedule).format("h:mm") 
+            : 'Exp '+ moment(el.timeDepExpectCalc).format("h:mm");
         
+         
+
         let terminal = el.term === 'A' 
         ? <span className='term term__A'>A</span> 
         : el.term === 'D' 
@@ -32,7 +44,9 @@ const FlightsList = ({flights, isFetching }) => {
                 {el["airportToID.city_en"] || el["airportFromID.city_en"]}
             </td>
             <td className="information-container">
-                {status !== "" ? `${status} ${moment(el.timeLandFact).format("h:mm")}` : ""}
+                {el.status === "DP" || el.status === "LN" 
+                ? `${status} ${moment(el.timeLandFact).format("h:mm")}`
+                : status}
             </td>
             <td className="information-container logo">
                 <img
