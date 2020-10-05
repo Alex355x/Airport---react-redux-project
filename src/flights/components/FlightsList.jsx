@@ -3,11 +3,9 @@ import TableHead from "./TableHead";
 import moment from "moment";
 
 const FlightsList = ({flights, isFetching }) => {
-    console.log(flights)
+
     const currentDate = moment().format("YYYY-MM-DD");
     const flightsToday = flights.filter(date => date.actual?.split('T')[0] === currentDate);
-    console.log(flightsToday);
-
     const fligtsListDirectionMapped = flightsToday.map(el => {
         
         let status = el.status === "DP" 
@@ -17,14 +15,10 @@ const FlightsList = ({flights, isFetching }) => {
             ? "Boarding" : el.status === "CK" 
             ? "Registration" : 'In flight';
 
-            
-        console.log(el.status)
         let timeShedule = el.status === "DP"
             ? moment(el.timeDepShedule).format("h:mm") : el.status === "LN" 
             ? moment(el.timeArrShedule).format("h:mm") 
-            : 'Exp '+ moment(el.timeDepExpectCalc).format("h:mm");
-        
-         
+            : 'Exp '+ moment(el.timeToStand).format("h:mm");
 
         let terminal = el.term === 'A' 
         ? <span className='term term__A'>A</span> 
@@ -51,13 +45,12 @@ const FlightsList = ({flights, isFetching }) => {
             <td className="information-container logo">
                 <img
                     className="company-name__logo"
-                    src={`https://api.iev.aero${el.codeShareData[0].logo}`}
+                    src={el.codeShareData[0].airline.en.logoSmallName}
                     alt="company-logo"
                 />
                 <span className='airlineName'>
                 {el.airline.en.name}   
-                </span>
-                        
+                </span> 
             </td>
             <td className="information-container">
                 {el.codeShareData[0].codeShare}
